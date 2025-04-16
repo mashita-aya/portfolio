@@ -2,8 +2,8 @@ import { Link } from 'react-scroll';
 import logoIcon from '../images/header_logo.svg';
 
 export const Footer = () => (
-  <div div className="footer_section">
-    <div div className="footer_content">
+  <div className="footer_section">
+    <div className="footer_content">
       <div className="footer_logo">
         <img src={logoIcon} alt="logo" />
       </div>
@@ -33,7 +33,7 @@ export const Footer = () => (
           </Link>
         </li>
       </ul>
-      <small class="copyright">All Rights Reserved 2025 ©︎ trois</small>
+      <small className="copyright">All Rights Reserved 2025 ©︎ trois</small>
     </div>
   </div>
 );

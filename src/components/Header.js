@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logoIcon from '../images/header_logo.svg';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +8,18 @@ export const Header = () => {
 
   return (
     <header className="header_section">
-      <div className="header_logo">
-        <img src={logoIcon} alt="logo" />
-      </div>
-      <button  className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+      <Link 
+        to="/"
+        smooth={true}
+        duration={500}
+        offset={-50}
+        onClick={() => setIsOpen(false)}
+      >
+        <h1 className="top_logo">           
+          <img src={logoIcon} alt="logo" />
+        </h1>
+      </Link>
+      <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
