@@ -1,63 +1,98 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Link as Scroll } from 'react-scroll';
 import { AboutDigestSection } from './About/AboutDigestSection';
 import { WorksDigestSection } from './Works/WorksDigestSection';
-import { useNavigate } from 'react-router-dom';
 import { workList } from '../data/workList';
 import { aboutList } from '../data/aboutList';
-import { useParams } from 'react-router-dom';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 export const Home = () => {
-  const navigate = useNavigate();
 
   return (
     <>
+    <div className="viewport">
+      <div className="viewport_innner">
+        <Splide options={{ 
+          arrows: false,
+          pauseOnHover: false,
+          autoplay: true,
+          interval: 3000,
+          type: 'fade',
+          rewind: true,
+          pagination: false,
+        }}>
+          {workList.map((image, index) => (
+            <SplideSlide key={index}>
+              <img src={`../../images/${image.imageNamePc}`} alt={image.title} />
+            </SplideSlide>
+          ))}
+        </Splide>
+      </div>
       <div id="home_section" className="home_section">
-        <h1 className="home_title">IRODORI</h1>
-        <p className="home_text">彩りの力と、伝えるデザイン。</p>
-        <Link className="home_link" to="/works">works</Link>
+        <p className="home_text">mashita aya</p>
+        <h1 className="home_title">portfolio site</h1>
+        <Scroll 
+          className="home_link"
+          to="works_section"
+          smooth={true}
+          duration={500}
+          offset={-50}
+        >
+          works
+          <span></span>
+        </Scroll>
       </div>
+    </div>
 
-      <div className="about_section">
-        <h2 className="about_title contact_title">about</h2>
-        {aboutList.map((about, index) => (
-          <AboutDigestSection
-            key={index}
-            title={about.title}
-            subTitle={about.subTitle}
-            moreLink={about.link}
-          >
-             {about.summary}
-          </AboutDigestSection>
-        ))}
-        <div className="about_button">
-          <Link
-            to="/about/content"
-            className="about_link"
-          >
-            more
-          </Link>
-        </div>
+    <div className="about_section">
+      <h2 className="about_title contact_title">about</h2>
+      {aboutList.map((about, index) => (
+        <AboutDigestSection
+          key={index}
+          title={about.title}
+          subTitle={about.subTitle}
+          moreLink={about.link}
+        >
+            {about.summary}
+        </AboutDigestSection>
+      ))}
+      <div className="about_button">
+        <Link
+          to="/about/content"
+          className="about_link normal_btn"
+        >
+          more
+        </Link>
       </div>
+    </div>
 
-      <div className="works_section">
-        <h2 className="works_title contact_title">works</h2>
+    <div id="works_section" className="works_section">
+      <h2 className="works_title contact_title">works</h2>
+      <div className="works_inner">
         {workList.map((work, index) => (
           <WorksDigestSection
             key={index}
+            id={work.id}
             title={work.title}
             tag={work.tag}
+            imageName={work.imageName01}
             detail={work.detail}
           >
             {work.summary}
           </WorksDigestSection>
         ))}
+      </div>
+      <div className="works_button">
         <Link
           to="/works/content"
-          className="works_button"
+          className="works_link normal_btn"
         >
           more
         </Link>
       </div>
-    </>
+    </div>
+  </>
   );
 };

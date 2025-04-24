@@ -7,8 +7,7 @@ export const AboutContent = () => {
   return (
     <div className="about_section section">
       <div className="about_header">
-        <h2 className="contact_title">about</h2>
-        <span>- 私について -</span>
+        <h2 className="contact_title ">about</h2>
       </div>
 
       {aboutList.map((about, index) => (
@@ -32,19 +31,17 @@ export const AboutContent = () => {
           </div>
           <div className="about_third_content">
             <h3 className="about_title">skill</h3>
+            <ul className="about_skill_list">
               {about.skill.map((skill, _index) => (
-                <ul
-                  className="about_skill_list"
-                  key={_index}
-                >
-                  <li>
-                    <h4 className="about_skill_title">{skill.name}</h4>
-                    <p className="about_skill_category">{skill.category}</p>
-                    <p className="about_skill_summary">{skill.summary}</p>
-
-                  </li>
-                </ul>
+              <li key={_index}>
+                <div className="about_skill_lists">
+                  <h4 className="about_skill_title">{skill.name}</h4>
+                  <p className="about_skill_category">{skill.category}</p>
+                </div>
+                  <p className="about_skill_summary">{skill.summary}</p>
+              </li>
               ))}
+            </ul>
           </div>
         </React.Fragment>
       ))}

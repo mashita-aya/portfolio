@@ -5,16 +5,18 @@ import { workList } from '../../data/workList';
 
 export const WorksContent = () => {
   return (
-    <div className="works_section">
-      <h2 className="works_title contact_title">works<span>−これまで制作したもの</span></h2>
+    <div className="works_section section">
+      <div className="works_header">
+        <h2 className="contact_title">works</h2>
+      </div>
         {workList.map((item, index) => (
           <WorksDigestSection
             key={index}
+            id={item.id}
             title={item.title}
             tag={item.tag}
-            moreLink={item.link}
+            imageName={item.imageNamePc}
           >
-          {item.summary} 
           </WorksDigestSection>
         ))}
     </div>

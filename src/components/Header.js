@@ -19,27 +19,49 @@ export const Header = () => {
           <img src={logoIcon} alt="logo" />
         </h1>
       </Link>
-      <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav className={`side_menu ${isOpen ? 'open' : ''}`}>
+    
+      <nav className="header_inner">
         <ul>
           <li>
             <Link 
-              to="section_home"
+              to="/"
               smooth={true}
               duration={500}
               offset={-50}
               onClick={() => setIsOpen(false)}
             >
               <h4 className="link_title">home</h4>
-              <p className="link_text">サイトトップ</p>            
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/about/content"
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">about</h4>
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/works/content"
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">works</h4>
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="section_contact"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">contact</h4>
             </Link>
           </li>
         </ul>
       </nav>
-      </header>
+    </header>
   );
 };

@@ -9,16 +9,19 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
+
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about/content" element={<AboutContent />} />
         <Route path="/works/content" element={<WorksContent />} />
-        <Route path="/workdetail/:title" element={<WorkDetail />} />
+        <Route path="/workdetail/:id" element={<WorkDetail />} />
       </Routes>
       <Footer />
     </Router>

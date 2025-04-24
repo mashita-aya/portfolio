@@ -1,39 +1,67 @@
-import { Link } from 'react-scroll';
-import logoIcon from '../images/header_logo.svg';
+import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-export const Footer = () => (
-  <div className="footer_section">
-    <div className="footer_content">
-      <div className="footer_logo">
-        <img src={logoIcon} alt="logo" />
+export const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <div className="footer_section">
+      <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav className={`side_menu ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li>
+            <Link 
+              to="/home"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">home</h4>
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/about/content"
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">about</h4>
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="/works/content"
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">works</h4>
+            </Link>
+          </li>
+          <li>
+            <Link 
+              to="section_contact"
+              smooth={true}
+              duration={500}
+              offset={-50}
+              onClick={() => setIsOpen(false)}
+            >
+              <h4 className="link_title">contact</h4>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="footer_content">
+        <h4 className="footer_title contact_title">contact</h4>
+        <p className="footer_text">お問い合わせは下記のメールアドレスよりお願いします。</p>
+        <Link to="/contact">
+          <p className="link_mail">a.mashita.works@gmail.com</p>
+        </Link>
       </div>
-      <ul className="footer_list">
-        <li className="footer_list_link">
-          <Link to="/home">
-            <h4 className="link_title">home</h4>
-            <p className="link_text">サイトトップ</p>
-          </Link>
-        </li>
-        <li className="footer_list_link">
-          <Link to="/works">
-            <h4 className="link_title">works</h4>
-            <p className="link_text">これまで制作したもの</p>
-          </Link>
-        </li>
-        <li className="footer_list_link">
-          <Link to="/about">
-            <h4 className="link_title">about</h4>
-            <p className="link_text">私について</p>
-          </Link>
-        </li>
-        <li className="footer_list_link contact_link">
-          <Link to="/contact">
-            <h4 className="link_title">contact</h4>
-            <p className="link_text">a.mashita.works@gmail.com</p>
-          </Link>
-        </li>
-      </ul>
-      <small className="copyright">All Rights Reserved 2025 ©︎ trois</small>
+      <small className="copyright">All Rights Reserved 2025 ©︎ aya mashita</small>
     </div>
-  </div>
-);
+  );
+};
