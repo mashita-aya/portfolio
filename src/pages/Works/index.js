@@ -1,0 +1,24 @@
+import { WorksDigestSection } from './WorksDigestSection';
+import { workList } from '../../data/workList';
+
+export const WorksContent = () => {
+  return (
+    <div className="works_section section">
+      <div className="works_header">
+        <h2 className="contact_title">works</h2>
+      </div>
+      <div className="works_inner">
+        {workList.map((item, index) => (
+          <WorksDigestSection
+            key={index}
+            id={item.id}
+            title={item.title}
+            tag={item.tag}
+            imageName={item.imageName01}
+          >
+          </WorksDigestSection>
+        ))}
+      </div>
+    </div>
+  );
+};
