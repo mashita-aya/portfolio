@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import { WorksDigestSection } from './WorksDigestSection';
-import { useLocation } from 'react-router-dom';
 import { workList } from '../../data/workList';
 
 export const WorksContent = () => {
@@ -9,16 +7,18 @@ export const WorksContent = () => {
       <div className="works_header">
         <h2 className="contact_title">works</h2>
       </div>
+      <div className="works_inner">
         {workList.map((item, index) => (
           <WorksDigestSection
             key={index}
             id={item.id}
             title={item.title}
             tag={item.tag}
-            imageName={item.imageNamePc}
+            imageName={item.imageName01}
           >
           </WorksDigestSection>
         ))}
+      </div>
     </div>
   );
 };

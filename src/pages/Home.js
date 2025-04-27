@@ -18,14 +18,14 @@ export const Home = () => {
           arrows: false,
           pauseOnHover: false,
           autoplay: true,
-          interval: 3000,
+          interval: 5000,
           type: 'fade',
           rewind: true,
           pagination: false,
-        }}>
+          }}>
           {workList.map((image, index) => (
             <SplideSlide key={index}>
-              <img src={`../../images/${image.imageNamePc}`} alt={image.title} />
+              <img src={`/images/${image.imageName01}`} alt={image.title} />
             </SplideSlide>
           ))}
         </Splide>

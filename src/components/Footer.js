@@ -16,7 +16,8 @@ export const Footer = () => {
         <ul>
           <li>
             <Link 
-              to="/home"
+              to="/"
+              className="normal_btn"
               smooth={true}
               duration={500}
               offset={-50}
@@ -42,24 +43,24 @@ export const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="section_contact"
-              smooth={true}
-              duration={500}
-              offset={-50}
+            <a 
+              className="mail_link normal_btn"
+              href="mailto:a.mashita.works@gmail.com"
               onClick={() => setIsOpen(false)}
             >
               <h4 className="link_title">contact</h4>
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
       <div className="footer_content">
         <h4 className="footer_title contact_title">contact</h4>
         <p className="footer_text">お問い合わせは下記のメールアドレスよりお願いします。</p>
-        <Link to="/contact">
+        <a 
+          className="mail_link normal_btn"
+          href="mailto:a.mashita.works@gmail.com">
           <p className="link_mail">a.mashita.works@gmail.com</p>
-        </Link>
+        </a>
       </div>
       <small className="copyright">All Rights Reserved 2025 ©︎ aya mashita</small>
     </div>

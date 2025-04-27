@@ -1,9 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { workList } from '../../data/workList';
 import IconWindow from '../../images/window_icon.svg';
 
 export const WorkDetail = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const { id } = useParams();
   const decodedTitle = decodeURIComponent(id);
 
@@ -35,8 +37,17 @@ export const WorkDetail = () => {
             <img src={`/images/${work.imageName01}`} alt={work.title} />
           </div>
           <div className="pc_img">
-            <img src={`/images/${work.imageNamePc}`} alt={work.title} />
-            <img src={`/images/${work.imageNameSc}`} alt={work.title} />
+            <a 
+              className={work.imageNameSc ? '' : 'full_width'}
+              href={`/images/${work.imageNamePc}`}
+            >
+              <img src={`/images/${work.imageNamePc}`} alt={work.title} />
+            </a>
+            {work.imageNameSc && (
+              <a href={`/images/${work.imageNameSc}`}>
+                <img src={`/images/${work.imageNameSc}`} alt={work.title} />
+              </a>
+            )}
           </div>
         </div>
         <div className="right_contnt">
@@ -65,8 +76,10 @@ export const WorkDetail = () => {
             </li>
             <li>
               <div className="sp_img">
-                <img src={`/images/${work.imageNamePc}`} alt={work.title} />
-                <img src={`/images/${work.imageNameSc}`} alt={work.title} />
+                <img className={work.imageNameSc ? '' : 'full_width'} src={`/images/${work.imageNamePc}`} alt={work.title} />
+                {work.imageNameSc && (
+                  <img src={`/images/${work.imageNameSc}`} alt={work.title} />
+                )}
               </div>
             </li>
           </ul>

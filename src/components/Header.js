@@ -10,6 +10,7 @@ export const Header = () => {
     <header className="header_section">
       <Link 
         to="/"
+        className="normal_btn"
         smooth={true}
         duration={500}
         offset={-50}
@@ -25,6 +26,7 @@ export const Header = () => {
           <li>
             <Link 
               to="/"
+              className="normal_btn"
               smooth={true}
               duration={500}
               offset={-50}
@@ -35,6 +37,7 @@ export const Header = () => {
           </li>
           <li>
             <Link 
+              className="normal_btn"
               to="/about/content"
               onClick={() => setIsOpen(false)}
             >
@@ -43,6 +46,7 @@ export const Header = () => {
           </li>
           <li>
             <Link 
+              className="normal_btn"
               to="/works/content"
               onClick={() => setIsOpen(false)}
             >
@@ -50,15 +54,13 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="section_contact"
-              smooth={true}
-              duration={500}
-              offset={-50}
+            <a 
+              className="normal_btn"
+              href="mailto:a.mashita.works@gmail.com"
               onClick={() => setIsOpen(false)}
             >
               <h4 className="link_title">contact</h4>
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
