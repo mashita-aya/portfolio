@@ -9,7 +9,7 @@ export const WorksDigestSection = ({ id, title, tag, imageName}) => {
         to={`/workdetail/${id}`}
       >     
         <div className="works_list_pic">
-          <img src={`../../images/${imageName}`} alt={title} />
+          <img src={`${process.env.PUBLIC_URL}/images/${imageName}`} alt={title} />
         </div>
         <div className="works_list_content">
           <h4 className="works_list_title">{title}</h4>

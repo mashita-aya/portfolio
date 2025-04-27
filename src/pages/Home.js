@@ -25,7 +25,7 @@ export const Home = () => {
           }}>
           {workList.map((image, index) => (
             <SplideSlide key={index}>
-              <img src={`/images/${image.imageName01}`} alt={image.title} />
+              <img src={`${process.env.PUBLIC_URL}/images/${image.imageName01}`} alt={image.title} />
             </SplideSlide>
           ))}
         </Splide>

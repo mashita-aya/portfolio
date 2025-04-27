@@ -34,18 +34,18 @@ export const WorkDetail = () => {
       <div className="work_detail_container">
         <div className="left_contnt">
           <div className="sp_img">
-            <img src={`/images/${work.imageName01}`} alt={work.title} />
+            <img src={`${process.env.PUBLIC_URL}/images/${work.imageName01}`} alt={work.title} />
           </div>
           <div className="pc_img">
             <a 
               className={work.imageNameSc ? '' : 'full_width'}
-              href={`/images/${work.imageNamePc}`}
+              href={`images/${work.imageNamePc}`}
             >
-              <img src={`/images/${work.imageNamePc}`} alt={work.title} />
+              <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
             </a>
             {work.imageNameSc && (
-              <a href={`/images/${work.imageNameSc}`}>
-                <img src={`/images/${work.imageNameSc}`} alt={work.title} />
+              <a href={`images/${work.imageNameSc}`}>
+                <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
               </a>
             )}
           </div>
@@ -78,7 +78,7 @@ export const WorkDetail = () => {
               <div className="sp_img">
                 <img className={work.imageNameSc ? '' : 'full_width'} src={`/images/${work.imageNamePc}`} alt={work.title} />
                 {work.imageNameSc && (
-                  <img src={`/images/${work.imageNameSc}`} alt={work.title} />
+                  <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
                 )}
               </div>
             </li>
