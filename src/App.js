@@ -4,24 +4,22 @@ import { Footer } from './components/Footer';
 import { WorksContent } from './pages/Works/index';
 import { WorkDetail } from './pages/Works/WorkDetail';
 import { AboutContent } from './pages/About/index';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 
 
 function App() {
+  const APP_NAME = "portfolio";
+
   return (
     <Router>
       <ScrollToTop />
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about/content" element={<AboutContent />} />
-        <Route path="/works/content" element={<WorksContent />} />
-        <Route path="/workdetail/:id" element={<WorkDetail />} />
+        <Route path={APP_NAME + '/'} element={<Home />} />
+        <Route path='/about/content' element={<AboutContent />} />
+        <Route path='/works/content'  element={<WorksContent />} />
+        <Route path='/workdetail/:id' element={<WorkDetail />} />
       </Routes>
       <Footer />
     </Router>

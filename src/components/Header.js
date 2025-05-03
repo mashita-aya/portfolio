@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const APP_NAME = "portfolio";
 
   return (
     <header className="header_section">
       <Link 
-        to="/"
+        to={APP_NAME + '/'}
         className="normal_btn"
         smooth={true}
         duration={500}
@@ -25,7 +25,7 @@ export const Header = () => {
         <ul>
           <li>
             <Link 
-              to="/"
+              to={APP_NAME + '/'}
               className="normal_btn"
               smooth={true}
               duration={500}

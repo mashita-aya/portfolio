@@ -2,7 +2,7 @@
   "name": "my_portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mashita-aya.github.io/portfolio/",
+  "homepage": "https://mashita-aya.github.io/portfolio",
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@testing-library/dom": "^10.4.0",

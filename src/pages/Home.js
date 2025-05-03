@@ -18,8 +18,10 @@ export const Home = () => {
           arrows: false,
           pauseOnHover: false,
           autoplay: true,
-          interval: 5000,
-          type: 'fade',
+          interval: 9000,
+          speed: 1000,
+          pauseOnFocus: false,
+          type: 'loop',
           rewind: true,
           pagination: false,
           }}>
