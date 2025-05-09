@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logoIcon from '../images/header_logo.svg';
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const Header = ({ setIsOpen }) => {
   const APP_NAME = "portfolio";
 
   return (
     <header className="header_section">
       <Link 
         to={APP_NAME + '/'}
-        className="normal_btn"
+        className="normal_link"
         smooth={true}
         duration={500}
         offset={-50}
@@ -26,7 +25,7 @@ export const Header = () => {
           <li>
             <Link 
               to={APP_NAME + '/'}
-              className="normal_btn"
+              className="normal_link"
               smooth={true}
               duration={500}
               offset={-50}
@@ -37,7 +36,7 @@ export const Header = () => {
           </li>
           <li>
             <Link 
-              className="normal_btn"
+              className="normal_link"
               to="/about/content"
               onClick={() => setIsOpen(false)}
             >
@@ -46,7 +45,7 @@ export const Header = () => {
           </li>
           <li>
             <Link 
-              className="normal_btn"
+              className="normal_link"
               to="/works/content"
               onClick={() => setIsOpen(false)}
             >
@@ -55,7 +54,7 @@ export const Header = () => {
           </li>
           <li>
             <a 
-              className="normal_btn"
+              className="normal_link"
               href="mailto:a.mashita.works@gmail.com"
               onClick={() => setIsOpen(false)}
             >

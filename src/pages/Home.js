@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Link as Scroll } from 'react-scroll';
 import { AboutDigestSection } from './About/AboutDigestSection';
 import { WorksDigestSection } from './Works/WorksDigestSection';
 import { workList } from '../data/workList';
@@ -8,8 +7,7 @@ import { aboutList } from '../data/aboutList';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-export const Home = () => {
-
+export const Home = () => {  
   return (
     <>
     <div className="viewport">
@@ -34,17 +32,19 @@ export const Home = () => {
       </div>
       <div id="home_section" className="home_section">
         <p className="home_text">mashita aya</p>
-        <h1 className="home_title">portfolio site</h1>
-        <Scroll 
-          className="home_link"
-          to="works_section"
-          smooth={true}
-          duration={500}
-          offset={-50}
-        >
-          works
-          <span></span>
-        </Scroll>
+        <h2 aria-hidden="true" translate="no" className="home_title text-wrap">
+          {"portfolio site".split("").map((char, i) => (
+            <span
+              className="parts"
+              style={{ "--index": i }}
+              key={i}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </h2>
+        <div className="left_decoration">Web Site Design</div>
+        <div className="right_decoration">Application Design</div>
       </div>
     </div>
 
