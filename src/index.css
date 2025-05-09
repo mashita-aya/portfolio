@@ -784,7 +784,7 @@ a { cursor: pointer; }
       position: sticky;
       top: 80px;
       margin-right: 80px;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
     .basic-text-inner {
       li { 
