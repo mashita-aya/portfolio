@@ -6,6 +6,7 @@ import { workList } from '../data/workList';
 import { aboutList } from '../data/aboutList';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { FadeInSection } from '../components/FadeInSection';
 
 export const Home = () => {  
   return (
@@ -48,6 +49,7 @@ export const Home = () => {
       </div>
     </div>
 
+    <FadeInSection>
     <div className="about_section">
       <h2 className="about_title contact_title">about</h2>
       {aboutList.map((about, index) => (
@@ -69,32 +71,35 @@ export const Home = () => {
         </Link>
       </div>
     </div>
+		</FadeInSection>
 
-    <div id="works_section" className="works_section">
-      <h2 className="works_title contact_title">works</h2>
-      <div className="works_inner">
-        {workList.map((work, index) => (
-          <WorksDigestSection
-            key={index}
-            id={work.id}
-            title={work.title}
-            tag={work.tag}
-            imageName={work.imageName01}
-            detail={work.detail}
+    <FadeInSection>
+      <div id="works_section" className="works_section">
+        <h2 className="works_title contact_title">works</h2>
+        <div className="works_inner">
+          {workList.map((work, index) => (
+            <WorksDigestSection
+              key={index}
+              id={work.id}
+              title={work.title}
+              tag={work.tag}
+              imageName={work.imageName01}
+              detail={work.detail}
+            >
+              {work.summary}
+            </WorksDigestSection>
+          ))}
+        </div>
+        <div className="works_button">
+          <Link
+            to="/works/content"
+            className="works_link normal_btn"
           >
-            {work.summary}
-          </WorksDigestSection>
-        ))}
+            more
+          </Link>
+        </div>
       </div>
-      <div className="works_button">
-        <Link
-          to="/works/content"
-          className="works_link normal_btn"
-        >
-          more
-        </Link>
-      </div>
-    </div>
+    </FadeInSection>
   </>
   );
 };
