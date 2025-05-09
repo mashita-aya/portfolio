@@ -16,13 +16,13 @@ export const aboutList = [
       {
         id: 1,
         name:"Web Design",
-        category:"Photoshop / xd / figma",
+        category:"Adobe Photoshop / Adobe xd / Figma",
         summary:"Webサイトやバナー、アプリ画面、システム管理画面など、幅広いジャンル・媒体のデザイン制作をすることができます。\n目的達成のために必要な情報設計や構成、そしてユーザーがどのようにアクションを起こすかを常に意識しながら、見た目の美しさだけでなく、使いやすさや機能性にも配慮したデザインを心がけます。"
       },
       {
         id: 2,
-        name:"Fountainhead Development",
-        category:"html / css / js / react",
+        name:"Implement",
+        category:"Html / css / js / React",
         summary:"HTML/CSS/JavaScriptなどの基本的な技術から、Reactなどのフレームワークも対応可能です。\nこれにより、デザインした通りの見た目や動きを、実際のWebサイトやアプリ上でもしっかりと再現することができます。"
       }
     ],

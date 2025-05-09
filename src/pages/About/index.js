@@ -1,13 +1,12 @@
 import React from 'react';
 import { AboutDigestSection } from './AboutDigestSection';
-import { useLocation } from 'react-router-dom';
 import { aboutList } from '../../data/aboutList';
 
 export const AboutContent = () => {
   return (
     <div className="about_section section">
       <div className="about_header">
-        <h2 className="contact_title ">about</h2>
+        <h2 className="contact_title tracking-in-expand">about</h2>
       </div>
 
       {aboutList.map((about, index) => (
