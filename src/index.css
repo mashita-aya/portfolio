@@ -51,7 +51,7 @@ body {
   height: 100%;
   background-color: rgb(255, 255, 255);
   z-index: 9999;
-  animation: fadeOut 8s ease-in-out forwards;
+  animation: fadeOut 10s infinite linear;
 }
 .loading_title {
   font-size: 1.1rem;
@@ -66,16 +66,8 @@ body {
     height: auto;
   }
 }
-
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 1);
-  }
-  to {
-    opacity: 0;
-    background-color: rgba(255, 255, 255, 0);
-  }
+  from { opacity: 1; }
 }
 
 /* 全体アニメーション */
@@ -377,7 +369,7 @@ a { cursor: pointer; }
   .parts {
     transform: translateY(-100%);
     opacity: 0;
-    animation: slideDown 5s ease infinite normal;
+    animation: slideDown 4s ease infinite normal;
     animation-delay: calc(var(--index) * 0.1s);
   }
   .sub_title {
