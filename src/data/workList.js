@@ -34,7 +34,7 @@ export const workList = [
   {
     id: "06",
     title: 'LPサイトのデザイン・実装',
-    tag: 'personal work',
+    tag: 'assign task',
     url: 'https://www.one-stack.jp/',
     imageName01: 'work06_tmb.svg',
     summary: '株式会社implにて提供しているサービスOneStackの販促LPを新規作成いたしました。',
