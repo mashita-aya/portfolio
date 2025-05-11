@@ -688,7 +688,10 @@ a { cursor: pointer; }
     padding: 24px 16px;
     margin-top: 20px;
     border-top: 1px solid var(--color_line);
-    @media (min-width: 1024px) { padding: 60px 80px; }
+    @media (min-width: 1024px) { 
+      padding: 60px 80px; 
+      margin-top: 0;
+    }
     h2 {
       font-size: 1.6rem;
       font-weight: 500;
