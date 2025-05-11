@@ -77,7 +77,7 @@ export const Home = () => {
       <div id="works_section" className="works_section">
         <h2 className="works_title contact_title">works</h2>
         <div className="works_inner">
-          {workList.map((work, index) => (
+          {workList.slice(0, 6).map((work, index) => (
             <WorksDigestSection
               key={index}
               id={work.id}

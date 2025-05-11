@@ -79,7 +79,9 @@ export const WorkDetail = () => {
               </li>
               <li>
                 <div className={work.imageNameSc ? 'sp_img' : 'sp_img full_width'}>
-                  <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
+                  {work.id !== '07' && work.imageNamePc && (
+                    <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
+                  )}
                   {work.imageNameSc && (
                     <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
                   )}
