@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReactとSplideスライダーを使って構築されたポートフォリオサイトです。  
+「about」「works」などのセクションをフェードインで表示し、ユーザーが直感的に操作できるインターフェースを目指しています。
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Topページ（Homeコンポーネント）の主な機能
 
-### `npm start`
+- 画面上部に全画面スライダー（Splide）を使用
+- タイトルアニメーション（`"portfolio site"` を1文字ずつアニメーション表示）
+- フェードインアニメーション（`FadeInSection`）によるセクション表示
+- About・Works（最大6件まで）のダイジェスト表示
+- 「more」ボタンで詳細ページへ遷移
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 使用データ
 
-### `npm test`
+- `workList`: `src/data/workList.js`  
+  → 各作品のタイトル、タグ、画像名、要約などを保持
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `aboutList`: `src/data/aboutList.js`  
+  → Aboutセクションの各項目のタイトル、リンク、要約など
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 使用技術
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React（Hooksベース）
+- React Router（`Link` を使用したルーティング）
+- @splidejs/react-splide（スライダーライブラリ）
+- カスタムフェードインアニメーション（`FadeInSection`コンポーネント）
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 起動方法
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/your-username/your-portfolio-project.git
+cd your-portfolio-project
+npm install
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## GitHub Pagesの更新
+npm run build 
+npm run deploy
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## ディレクトリ構成
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+src/
+├── App.js                         # ルーティング定義と共通レイアウト
+├── images/
+├── components/
+│   └── FadeInSection.js           # スクロールに応じて表示されるアニメーション
+│   └── Footer.js                  # サイト全体のフッターコンポーネント
+│   └── Header.js                  # サイト全体のヘッダーコンポーネント
+│   └── ScrollToTop.js             # ページ遷移時にスクロール位置をトップへ戻す処理
+├── pages/
+│   └── Home.js                    # トップページ
+│   └── About/            
+│       └── index.js               # Aboutページの全体構成を担うコンポーネント
+│       └── AboutDigestSection.js  # Aboutの要約用コンポーネント
+│   └── Works              
+│       └── index.js               # worksページの全体構成を担うコンポーネント
+│       └── WorksDigestSection.js  # worksの要約用コンポーネント
+│       └── WorkDetail.js          # worksの各詳細説明用コンポーネント
+├── data/
+│   ├── workList.js                # 作品情報
+│   └── aboutList.js               # About情報
+└── index.css                      # cssファイル
