@@ -31,9 +31,8 @@ export const Home = () => {
           ))}
         </Splide>
       </div>
-      <div id="home_section" className="home_section">
-        <p className="home_text">mashita aya</p>
-        <h2 aria-hidden="true" translate="no" className="home_title text-wrap">
+      <div className="viewport_title">
+        <h2 aria-hidden="true" translate="no" className="title">
           {"portfolio site".split("").map((char, i) => (
             <span
               className="parts"
@@ -44,6 +43,7 @@ export const Home = () => {
             </span>
           ))}
         </h2>
+        <p className="sub_title">mashita aya</p>
         <div className="left_decoration">Web Site Design</div>
         <div className="right_decoration">Application Design</div>
       </div>
@@ -77,7 +77,7 @@ export const Home = () => {
       <div id="works_section" className="works_section">
         <h2 className="works_title contact_title">works</h2>
         <div className="works_inner">
-          {workList.map((work, index) => (
+          {workList.slice(0, 6).map((work, index) => (
             <WorksDigestSection
               key={index}
               id={work.id}
