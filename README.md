@@ -46,13 +46,16 @@ npm start
 ---
 
 ## GitHub Pagesの更新
+
+```bash
 npm run build 
 npm run deploy
+```
 
 ---
 
 ## ディレクトリ構成
-
+```bash
 src/
 ├── App.js                         # ルーティング定義と共通レイアウト
 ├── images/
@@ -74,3 +77,4 @@ src/
 │   ├── workList.js                # 作品情報
 │   └── aboutList.js               # About情報
 └── index.css                      # cssファイル
+```
