@@ -37,8 +37,8 @@ ReactとSplideスライダーを使って構築されたポートフォリオサ
 ## 起動方法
 
 ```bash
-git clone https://github.com/your-username/your-portfolio-project.git
-cd your-portfolio-project
+git clone https://github.com/mashita-aya/portfolio.git
+cd my_portfolio
 npm install
 npm start
 ```
