@@ -25,10 +25,10 @@ function App() {
     <>
       {isLoading && (
         <div className="loading_screen">
-          <div className="loading_logo">           
+          <div className="loading_screen__logo">           
             <img src={logoIcon} alt="logo" />
           </div>
-          <h2 className="loading_title">portfolio site</h2>
+          <h2 className="loading_screen__title">portfolio site</h2>
         </div>
       )}
       <Router>

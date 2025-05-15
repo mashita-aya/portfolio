@@ -21,39 +21,22 @@ $breakpoints: (
   }
 }
 
-// loadingアニメーション
-.loading_screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  z-index: 9999;
-  animation: fadeOut 10s infinite linear;
-}
-.loading_title {
-  font-size: 1.1rem;
-  letter-spacing: 0.2rem;
-}
-.loading_logo {
-  width: 40%;
-  height: auto;
-  margin-bottom: 24px;
-  @media (min-width: 1024px) {
-    width: 20%;
-    height: auto;
-  }
-}
+// z-index
+$z-index: (
+  header: 10,
+  home-title: 20,
+  loading: 999,
+  footer-btn: 25,
+  sub-nav: 20,
+);
+
+
+// アニメーション
+
 @keyframes fadeOut {
   from { opacity: 1; }
 }
 
-// 全体フェードイン
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
@@ -67,7 +50,6 @@ $breakpoints: (
 .tracking-in-expand{-webkit-animation:tracking-in-expand .7s cubic-bezier(.215,.61,.355,1.000) both;animation:tracking-in-expand .7s cubic-bezier(.215,.61,.355,1.000) both}
 @-webkit-keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}@keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}
 
-// home_アニメーション
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);

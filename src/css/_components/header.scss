@@ -6,7 +6,7 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 200;
+  z-index: map-get(global.$z-index, header);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   width: 100%;
