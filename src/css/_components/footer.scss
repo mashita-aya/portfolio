@@ -24,8 +24,8 @@
   & .footer__text {
     padding: 0 8px;
     color: #A4A4A4;
-    font-size: 1.4rem;
     margin-top: 24px;
+    @include global.pc { font-size: 1.4rem; }
   }
 
   & .footer__mail-link { width: fit-content; }
