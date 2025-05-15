@@ -1,0 +1,55 @@
+// _components/header.scss
+@use "../_base/global.scss" as global;
+
+/* ===== header Block ===== */
+.header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 200;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid global.$color_line;
+  @include global.flex;
+  @include global.justifyContent(sb);
+  @include global.alignItems(center);
+  @include global.sp {
+    padding: 0 16px;
+    height: 55px;
+    border-bottom: none;
+  }
+  @include global.pc {
+    padding: 0 80px;
+    height: 80px;
+  }
+
+  & .header__link { width: 50%; }
+  & .header__logo {
+    height: 40px;
+    @include global.sp { width: 120px; }
+    @include global.pc { width: 160px; }
+  }
+}
+
+.main-nav {
+  width: 40%;
+  max-width: 460px;
+  & .main-nav__list {
+    display: none;
+    @include global.pc { 
+      @include global.flex;
+      @include global.justifyContent(sb);
+    }
+  }
+
+  & .main-nav__item { padding: 32px 24px; }
+  & .main-nav__link {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family:  "Krona One", serif;
+    letter-spacing: 0.10rem;
+    box-sizing: border-box;
+  }
+}

@@ -23,7 +23,7 @@ export const aboutList = [
         id: 2,
         name:"Implement",
         category:"Html / css / js / React",
-        summary:"HTML/CSS/JavaScriptなどの基本的な技術から、Reactなどのフレームワークも対応可能です。\nこれにより、デザインした通りの見た目や動きを、実際のWebサイトやアプリ上でもしっかりと再現することができます。"
+        summary:"HTML/CSS/JavaScriptなどの基本的な技術から、Reactなどのフレームワークも対応可能です。\nデザインした通りの見た目や動きを、実際のWebサイトやアプリ上でもしっかりと再現することができます。"
       }
     ],
   }

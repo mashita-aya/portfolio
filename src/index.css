@@ -1,42 +1,7 @@
 
 /* __ common content __ */
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Noto+Sans+JP:wght@100..900&display=swap');
 
-/* color */ 
-:root {
-  --color_main: #d2d2d2;
-  --color_line: #ddd;
-  --color_font: #333;
-  --color_accent: #E4E4E4;
-}
 
-html {
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  isolation: isolate;
-}
-
-body {
-  margin: 0;
-  font-family: "Noto Sans JP", "Krona One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--color_font);
-}
-
-@media screen and (min-width: 376px) {
-  html {
-      font-size: 75%; 
-      /* //1rem = 12px */
-  }
-}
-@media screen and (max-width: 375px) {
-  html {
-    font-size: 62.5%; 
-    /* 1rem = 10px */
-  }
-}
 
 /* loading */
 .loading_screen {
@@ -85,24 +50,10 @@ body {
 @-webkit-keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}@keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}
 
 /* 共通パーツ */
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-a { cursor: pointer; }
+
 .normal_link { transition: .3s; }
 .normal_btn { 
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  color: #7C7C7C;
-  border: 1px solid var(--color_line);
-  font-size: 1.0rem;
-  width: 40%;
-  text-align: center;
-  padding: 10px 24px;
-  transition: .3s;
-  @media (min-width: 1024px) { width: 20%; }
+  
 }
 .normal_btn:hover{ 
   color:#fff;
@@ -116,193 +67,45 @@ a { cursor: pointer; }
 }
 
 
-/* header */
-.header_section {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 200;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  width: 100%;
-  height: 55px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
+/* ===== Home Block ===== */
+.home {
+  position: relative;
+  padding: 40px 32px 60px;
+  margin-bottom: 80px;
+  overflow: hidden;
+  background-color: var(--color_main);
   @media (min-width: 1024px) { 
-    padding: 0 80px;
-    height: 80px;
-  }
-  .top_logo {
-    width: 120px;
-    height: 35px;
-    @media (min-width: 768px) {
-      width: 160px;
-      height: 40px;
-    }
-  }
-}
-.header_inner ul {
-  display: none;
-  @media (min-width: 1024px) {
-    width: 100%;
+    padding: 80px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    li { margin: 0 8px;}
-    a {
-      font-size: 1.1rem;
-      font-weight: 600;
-      font-family:  "Krona One", serif;
-      letter-spacing: 0.10rem;
-    }
-    a:hover { opacity: 0.5; }
+    box-sizing: border-box;
   }
-}
-
-/* hamburger */
-.hamburger svg {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  overflow: visible;
-  position: fixed;
-  bottom: 80px;
-  right: 32px;
-  z-index: 1000;
-  @media (min-width: 1024px) { 
-    right: 80px;
-    width: 80px;
-    height: 80px;
-  }
-}
-.hamburger .rotating {
-  animation: circular-text-rotate 10s linear infinite;
-  transform-origin: 50% 50%;
-  transform-box: fill-box;
-}
-.hamburger path {
-  fill: none;
-}
-.hamburger text {
-  fill: #333;
-  font-size: 1.6rem;
-  letter-spacing: 1.2rem;
-  mix-blend-mode: screen;
-}
-.hamburger .hamburger_close { display: none; }
-.hamburger .hamburger_title,
-.hamburger .hamburger_close {
-  fill: #333;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.2rem;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-@keyframes circular-text-rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-/* 開示時 */
-.hamburger.open { 
-  .hamburger_title { display: none; }
-  .hamburger_close { display: block;}
-}
-
-
-/* side_menu */
-.side_menu {
-  position: fixed;
-  bottom: 0;
-  width: 80%;
-  right: -100%;
-  height: 80vh;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid var(--color_line);
-  padding: 2rem;
-  border-radius: 200px 0 0 0;
-  transition-delay: .6s;
-  z-index: 999;
-  transition: background-color 0.25s cubic-bezier(0.83, 0, 0.17, 1);
-  @media (min-width: 768px) { width: 40%; }
-}
-.side_menu.open { right: 0; }
-.side_menu ul {
-  height: 100vh;
-  padding: 100px 80px;
-  @media (max-width: 768px) { padding: 100px 20px;}
-}
-.side_menu li {
-  font-family: "Krona One", sans-serif;
-  font-size: 1.6rem;
-  margin-top: 40px;
-}
-.side_menu li a { 
-  width: 100%;
-  padding: 20px;
-  display: block;
-  text-decoration: none;
-  cursor: pointer;
-  transition: .3s;
-  &:hover {
-    opacity: 0.5;
-  }
-}
-
-/* footer */
-.footer_section {
-  padding: 60px 0 24px;
-  @media (min-width: 1024px) { padding: 120px 0 24px; }
-  .footer_content {
-    width: 95%;
-    margin-left: auto;
-    margin-bottom: 140px;
-    @media (min-width: 1024px) { margin-bottom: 40px; }
-  }
-  .footer_title {
-    padding: 0 8px 12px;
-    border-bottom: 1px solid var(--color_line);
-    margin-bottom: 20px;
-  }
-  .footer_text {
-    padding: 0 8px;
-    color: #A4A4A4;
-    font-size: 1.0rem;
-    margin-bottom: 12px;
+  
+  &___slider {
+    height: 90vh;
+    margin: 0 auto;
+    mask-image: url(./images/mask_img_sp.svg);
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
     @media (min-width: 1024px) {
-      font-size: 1.2rem;
-      margin-bottom: 24px;
+      width: 80%;
+      mask-image:url(./images/mask_img_pc.svg);
+      mask-position: center left;
+      mask-repeat: no-repeat;
+      mask-size: 80% 100%;
     }
-  }
-  .mail_link:hover { opacity: 0.5; }
-  .link_mail {
-    padding: 0 8px;
-    text-decoration-line: underline;
-    font-size: 1.8rem;
-    margin-bottom: 60px;
-    @media (min-width: 1024px) { margin-bottom: 120px; }
-  }
-  .copyright {
-    display: flex;
-    justify-content: center;
-    font-size: 0.8rem;
-    text-align: center;
-    color: #A4A4A4;
   }
 }
 
+/* .splide__slide {
+  height: 80vh;
+  @media (min-width: 1024px) {height: 90vh;}
+}
+.splide__slide img { object-fit: cover; } */
 
-/* __ page content __ */
-/* home section */
+/* 
 .viewport {
   position: relative;
   padding: 40px 32px 60px;
@@ -381,46 +184,10 @@ a { cursor: pointer; }
       margin-top: 12px;
     }
   }
-  .left_decoration,
-  .right_decoration {
-    font-size: 0.7rem;
-    white-space: nowrap;
-    letter-spacing: 0.6rem;
-    position: absolute;
-    top: 80px;
-    height: 80vh;
-    width: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    writing-mode: vertical-rl;
-    @media (min-width: 1024px) {
-      width: 80px;
-      font-size: 0.8rem;
-    }
-  }
-  .left_decoration { left: 0; }
-  .right_decoration { right:0; }
-}
 
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  30% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  90% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
+} */
+
+
 
 /* about section */
 .about_section {

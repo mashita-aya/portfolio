@@ -1,11 +1,11 @@
-import { Header } from './components/Header'
+import { Header } from './pages/components/Header'
 import { Home } from './pages/Home'
-import { Footer } from './components/Footer';
+import { Footer } from './pages/components/Footer';
 import { WorksContent } from './pages/Works/index';
 import { WorkDetail } from './pages/Works/WorkDetail';
 import { AboutContent } from './pages/About/index';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollToTop } from './pages/components/ScrollToTop';
 import React, { useState, useEffect } from 'react';
 import { CONSTANTS } from './constants';
 import logoIcon from './images/header_logo.svg';

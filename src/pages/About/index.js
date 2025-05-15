@@ -1,14 +1,14 @@
 import React from 'react';
 import { AboutDigestSection } from './AboutDigestSection';
 import { aboutList } from '../../data/aboutList';
-import { FadeInSection } from '../../components/FadeInSection';
+import { FadeInSection } from '../components/FadeInSection';
 
 export const AboutContent = () => {
   return (
     <FadeInSection>
-      <div className="about_section section">
-        <div className="about_header">
-          <h2 className="contact_title tracking-in-expand">about</h2>
+      <div className="about-section">
+        <div className="about-section__header">
+          <h2 className="about-section__title tracking-in-expand">about</h2>
         </div>
 
         {aboutList.map((about, index) => (
@@ -21,25 +21,26 @@ export const AboutContent = () => {
                 {about.summary}
             </AboutDigestSection>
 
-            <div className="about_second_content">
-              <h3 className="about_title">biography</h3>
+            <div className="about-section__biography">
+              <h3 className="about-section__subtitle">biography</h3>
               {about.biography?.map((bio, i) => (
-                <dl key={i} className="about_biography_list">
-                  <dd>{bio.year}</dd>
-                  <dt>{bio.summary}</dt>
+                <dl key={i} className="about-section__biography-list">
+                  <dd className="about-section__biography-year">{bio.year}</dd>
+                  <dt className="about-section__biography-summary">{bio.summary}</dt>
                 </dl>
               ))}
             </div>
-            <div className="about_third_content">
-              <h3 className="about_title">skill</h3>
-              <ul className="about_skill_list">
+
+            <div className="about-section__skills">
+              <h3 className="about-section__subtitle">skill</h3>
+              <ul className="about-section__skill-list">
                 {about.skill.map((skill, _index) => (
-                <li key={_index}>
-                  <div className="about_skill_lists">
-                    <h4 className="about_skill_title">{skill.name}</h4>
-                    <p className="about_skill_category">{skill.category}</p>
+                <li key={_index} className="about-section__skill-item">
+                  <div className="about-section__skill-header">
+                    <h4 className="about-section__skill-title">{skill.name}</h4>
+                    <p className="about-section__skill-category">{skill.category}</p>
                   </div>
-                    <p className="about_skill_summary">{skill.summary}</p>
+                    <p className="about-section__skill-summary">{skill.summary}</p>
                 </li>
                 ))}
               </ul>

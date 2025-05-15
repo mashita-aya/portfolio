@@ -6,13 +6,13 @@ import { workList } from '../data/workList';
 import { aboutList } from '../data/aboutList';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { FadeInSection } from '../components/FadeInSection';
+import { FadeInSection } from './components/FadeInSection';
 
 export const Home = () => {  
   return (
     <>
-    <div className="viewport">
-      <div className="viewport_innner">
+    <div className="home">
+      <div className="home__slider">
         <Splide options={{ 
           arrows: false,
           pauseOnHover: false,
@@ -31,8 +31,8 @@ export const Home = () => {
           ))}
         </Splide>
       </div>
-      <div className="viewport_title">
-        <h2 aria-hidden="true" translate="no" className="title">
+      <div className="home__title-area">
+        <h2 className="home__main-title" aria-hidden="true" translate="no">
           {"portfolio site".split("").map((char, i) => (
             <span
               className="parts"
@@ -43,15 +43,15 @@ export const Home = () => {
             </span>
           ))}
         </h2>
-        <p className="sub_title">mashita aya</p>
-        <div className="left_decoration">Web Site Design</div>
-        <div className="right_decoration">Application Design</div>
+        <p className="home__sub-title">mashita aya</p>
+        <div className="home__left-decoration">Web Site Design</div>
+        <div className="home__right-decoration">Application Design</div>
       </div>
     </div>
 
     <FadeInSection>
-    <div className="about_section">
-      <h2 className="about_title contact_title">about</h2>
+    <div className="home__about">
+      <h2 className="home__section-title">about</h2>
       {aboutList.map((about, index) => (
         <AboutDigestSection
           key={index}
@@ -62,10 +62,10 @@ export const Home = () => {
             {about.summary}
         </AboutDigestSection>
       ))}
-      <div className="about_button">
+      <div className="home__about-button">
         <Link
           to="/about/content"
-          className="about_link normal_btn"
+          className="button button--normal"
         >
           more
         </Link>
@@ -74,9 +74,9 @@ export const Home = () => {
 		</FadeInSection>
 
     <FadeInSection>
-      <div id="works_section" className="works_section">
-        <h2 className="works_title contact_title">works</h2>
-        <div className="works_inner">
+      <div id="works_section" className="home__works">
+        <h2 className="home__section-title">works</h2>
+        <div className="home__works-list">
           {workList.slice(0, 6).map((work, index) => (
             <WorksDigestSection
               key={index}
@@ -90,10 +90,10 @@ export const Home = () => {
             </WorksDigestSection>
           ))}
         </div>
-        <div className="works_button">
+        <div className="home__works-button">
           <Link
             to="/works/content"
-            className="works_link normal_btn"
+            className="button button--normal"
           >
             more
           </Link>

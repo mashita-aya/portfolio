@@ -1,64 +1,64 @@
 import React from 'react';
-import logoIcon from '../images/header_logo.svg';
+import logoIcon from '../../images/header_logo.svg';
 import { Link } from 'react-router-dom';
 
 export const Header = ({ setIsOpen }) => {
   const APP_NAME = "portfolio";
 
   return (
-    <header className="header_section">
+    <header className="header">
       <Link 
         to={APP_NAME + '/'}
-        className="normal_link"
+        className="header__link"
         smooth={true}
         duration={500}
         offset={-50}
         onClick={() => setIsOpen(false)}
       >
-        <h1 className="top_logo">           
+        <h1 className="header__logo">           
           <img src={logoIcon} alt="logo" />
         </h1>
       </Link>
     
-      <nav className="header_inner">
-        <ul>
-          <li>
+      <nav className="main-nav">
+        <ul className="main-nav__list">
+          <li className="main-nav__item">
             <Link 
+              className="main-nav__link"
               to={APP_NAME + '/'}
-              className="normal_link"
               smooth={true}
               duration={500}
               offset={-50}
               onClick={() => setIsOpen(false)}
             >
-              <h4 className="link_title">home</h4>
+              home
             </Link>
           </li>
-          <li>
+          <li className="main-nav__item">
             <Link 
-              className="normal_link"
+              className="main-nav__link"
               to="/about/content"
               onClick={() => setIsOpen(false)}
             >
-              <h4 className="link_title">about</h4>
+              about
             </Link>
           </li>
-          <li>
+          <li className="main-nav__item">
             <Link 
-              className="normal_link"
+              className="main-nav__link"
               to="/works/content"
               onClick={() => setIsOpen(false)}
             >
-              <h4 className="link_title">works</h4>
+              works
             </Link>
           </li>
-          <li>
+          <li className="main-nav__item">
             <a 
-              className="normal_link"
+              className="main-nav__link"
               href="mailto:a.mashita.works@gmail.com"
               onClick={() => setIsOpen(false)}
             >
-              <h4 className="link_title">contact</h4>
+              contact
             </a>
           </li>
         </ul>
