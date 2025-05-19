@@ -1,17 +1,19 @@
 // _components/header.scss
 @use "../_base/global.scss" as global;
+@use 'sass:map';
 
 /* ===== header Block ===== */
 .header {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: map-get(global.$z-index, header);
+  z-index: map.get(global.$z-index, header);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   width: 100%;
   box-sizing: border-box;
   border-bottom: 1px solid global.$color_line;
+  box-shadow:  5px 5px 10px 0px rgba(255, 255, 255, 0.2);
   @include global.flex;
   @include global.justifyContent(sb);
   @include global.alignItems(center);
@@ -46,7 +48,7 @@
 
   & .main-nav__item { padding: 32px 24px; }
   & .main-nav__link {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     font-family:  "Krona One", serif;
     letter-spacing: 0.10rem;

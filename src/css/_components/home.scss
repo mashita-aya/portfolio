@@ -8,7 +8,7 @@
   z-index: 0;
   padding: 40px 32px 60px;
   overflow: hidden;
-  background: global.$color_main;
+  background: #dddddd2a;
   @include global.sp { display: block;}
   @include global.pc {
     padding: 80px; 
@@ -20,24 +20,27 @@
   & .home__slider {
     height: 90vh;
     margin: 0 auto;
-    mask-repeat: no-repeat;
+    
     @include global.sp {
       width: 100%;
       mask-image: url(../../images/mask_img_sp.svg);
       mask-position: center center;
       mask-size: contain;
+      mask-repeat: no-repeat;
     }
     @include global.pc {
       width: 70%;
+      height: 100vh;
       mask-image:url(../../images/mask_img_pc.svg);
       mask-position: center left;
+      mask-repeat:  repeat-y;
       mask-size: 90% 100%;
     }
   }
 
-  & .splide__slide {
+  & .splide__slide > div {
     @include global.sp { height: 80vh; }
-    @include global.pc { height: 90vh; }
+    @include global.pc { height: 100vh; }
   }
   & .splide__slide img { object-fit: cover; }
   

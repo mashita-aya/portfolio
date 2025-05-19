@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { AboutDigestSection } from './About/AboutDigestSection';
 import { WorksDigestSection } from './Works/WorksDigestSection';
@@ -8,42 +8,66 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { FadeInSection } from './components/FadeInSection';
 
-export const Home = () => {  
+export const Home = () => { 
+  const slidesRef = useRef([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      slidesRef.current.forEach((wrap) => {
+        if (wrap) {
+          wrap.style.transform = `translateY(${scrollY * 0.5 }px)`;
+        }
+      });
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
     <div className="home">
       <div className="home__slider">
-        <Splide options={{ 
-          arrows: false,
-          pauseOnHover: false,
-          autoplay: true,
-          interval: 9000,
-          speed: 1000,
-          pauseOnFocus: false,
-          type: 'loop',
-          rewind: true,
-          pagination: false,
-          }}>
-          {workList.map((image, index) => (
-            <SplideSlide key={index}>
-              <img src={`${process.env.PUBLIC_URL}/images/${image.imageName01}`} alt={image.title} />
-            </SplideSlide>
-          ))}
-        </Splide>
+      <Splide options={{ 
+        arrows: false,
+        pauseOnHover: false,
+        autoplay: true,
+        interval: 9000,
+        speed: 1000,
+        pauseOnFocus: false,
+        type: 'loop',
+        rewind: true,
+        pagination: false,
+        }}>
+        {workList.map((image, index) => (
+          <SplideSlide key={index}>
+            <div className="slide-img-wrap">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/${image.imageName01}`}
+                alt={image.title}
+                ref={(el) => (slidesRef.current[index] = el)}
+                className="parallax-img"
+              />
+            </div>
+          </SplideSlide>
+        
+        ))}
+      </Splide>
       </div>
-      <div className="home__title-area">
-        <h2 className="home__main-title" aria-hidden="true" translate="no">
-          {"portfolio site".split("").map((char, i) => (
-            <span
-              className="parts"
-              style={{ "--index": i }}
-              key={i}
-            >
-              {char === " " ? "\u00A0" : char}
-            </span>
-          ))}
-        </h2>
-        <p className="home__sub-title">mashita aya</p>
+        <div className="home__title-area">
+          <h2 className="home__main-title" aria-hidden="true" translate="no">
+            {"portfolio site".split("").map((char, i) => (
+              <span
+                className="parts"
+                style={{ "--index": i }}
+                key={i}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </h2>
+          <p className="home__sub-title">mashita aya</p>
         <div className="home__left-decoration">Web Site Design</div>
         <div className="home__right-decoration">Application Design</div>
       </div>

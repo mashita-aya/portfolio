@@ -1,4 +1,5 @@
 // _base/global.scss
+@use 'sass:map';
 
 // 色
 $color_main: #d2d2d2;
@@ -11,12 +12,12 @@ $breakpoints: (
   medium: 768,
 );
 @mixin sp {
-  @media screen and (max-width: #{map-get($breakpoints, medium) - 0.02}px) {
+  @media screen and (max-width: #{map.get($breakpoints, medium) - 0.02}px) {
     @content;
   }
 }
 @mixin pc {
-  @media screen and (min-width: #{map-get($breakpoints, medium)}px), print {
+  @media screen and (min-width: #{map.get($breakpoints, medium)}px), print {
     @content;
   }
 }
@@ -29,7 +30,6 @@ $z-index: (
   footer-btn: 25,
   sub-nav: 20,
 );
-
 
 // アニメーション
 
@@ -68,7 +68,6 @@ $z-index: (
     opacity: 0;
   }
 }
-
 
 // display: flex
 @mixin flex {

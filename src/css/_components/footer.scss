@@ -1,5 +1,6 @@
 // _components/footer.scss
 @use "../_base/global.scss" as global;
+@use 'sass:map';
 
 /* ===== footer Block ===== */
 .footer {
@@ -41,7 +42,7 @@
   & .footer__copyright {
     @include global.flex;
     @include global.justifyContent(center);
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     text-align: center;
     color: #A4A4A4;
     @include global.sp {  margin-top: 140px; }
@@ -56,12 +57,18 @@
     cursor: pointer;
     position: fixed;
     bottom: 80px;
-    z-index: map-get(global.$z-index, footer-btn);
-    width: 80px;
-    height: 80px;
+    z-index: map.get(global.$z-index, footer-btn);
     box-sizing: border-box;
-    @include global.sp { right: 16px; }
-    @include global.pc { right: 80px; }
+    @include global.sp { 
+      width: 80px;
+      height: 80px;
+      right: 16px; 
+    }
+    @include global.pc { 
+      width: 100px;
+      height: 100px;
+      right: 80px; 
+    }
   }
   & .footer__menu-icon {
     width: 100%;
@@ -74,14 +81,14 @@
 
     text {
       fill: #333;
-      font-size: 1.6rem;
+      font-size: 1.0rem;
       letter-spacing: 1.2rem;
     }
   }
 
   & .footer__menu-text {
     fill: #333;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     letter-spacing: 0.2rem;
     transition: opacity 0.3s ease;
 
@@ -96,7 +103,7 @@
     position: fixed;
     bottom: 0;
     right: -100%;
-    z-index: map-get(global.$z-index, sub-nav);
+    z-index: map.get(global.$z-index, sub-nav);
     height: 80vh;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
@@ -105,10 +112,11 @@
     border-radius: 200px 0 0 0;
     transition-delay: .6s;
     box-sizing: border-box;
+    box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
     transition: background-color 0.25s cubic-bezier(0.83, 0, 0.17, 1);
     @media (min-width: 768px) { }
     @include global.sp { width: 95%; }
-    @include global.pc { width: 40%; }
+    @include global.pc { width: 30%; }
   }
 
   & .footer__sub-nav--open { right: 0; }

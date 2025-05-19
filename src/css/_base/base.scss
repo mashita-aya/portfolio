@@ -1,11 +1,14 @@
 // _base/base.scss
 @use "../_base/global.scss" as global;
+@use 'sass:map';
 
 html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size: 62.5%;
+  scroll-behavior: smooth;
+
 }
 
 body {

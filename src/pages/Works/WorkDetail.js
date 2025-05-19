@@ -33,22 +33,12 @@ export const WorkDetail = () => {
 
         <div className="work-detail__container">
           <div className="work-detail__left-contnt">
-            <div className="work-detail__image work-detail__image--sp">
-              <img src={`${process.env.PUBLIC_URL}/images/${work.imageName01}`} alt={work.title} />
-            </div>
-            <div className="work-detail__image-group">
-              <a 
-                className={`work-detail__image ${!work.imageNameSc ? 'work-detail__image--full' : ''}`}
-                href={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`}
-              >
-                <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
-              </a>
-              {work.imageNameSc && (
-                <a className="work-detail__image" href={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`}>
-                  <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
-                </a>
-              )}
-            </div>
+            <a 
+              className="work-detail__image"
+              href={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`}
+            >
+              <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
+            </a>
           </div>
           <div className="work-detail__right-content">
             <ul className="work-detail__text-list">
@@ -75,16 +65,6 @@ export const WorkDetail = () => {
                       </>
                     )}
                   </dl>
-                </div>
-              </li>
-              <li>
-              <div className={`work-detail__images work-detail__images--sp ${!work.imageNameSc ? 'work-detail__images--full' : ''}`}>
-                {work.id !== '07' && work.imageNamePc && (
-                    <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
-                  )}
-                  {work.imageNameSc && (
-                    <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
-                  )}
                 </div>
               </li>
             </ul>
