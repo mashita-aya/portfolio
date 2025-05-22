@@ -102,6 +102,8 @@
 
 /* ===== Works Detail Block  ===== */
 .work-detail {
+  background: #dddddd2a;
+  padding-bottom: 80px;
   & .work-detail__header {
     @include global.sp {
       padding: 24px 16px;

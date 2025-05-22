@@ -5,9 +5,8 @@
 /* ===== footer Block ===== */
 .footer {
   width: 100%;
-  @include global.sp { padding: 120px 0 24px; }
-  @include global.pc { padding: 160px 0 24px; }
-  
+  padding: 120px 0 24px;
+ 
   & .footer__content {
     width: 95%;
     margin-left: auto;
@@ -46,7 +45,7 @@
     text-align: center;
     color: #A4A4A4;
     @include global.sp {  margin-top: 140px; }
-    @include global.pc {  margin-top: 80px; }
+    @include global.pc {  margin-top: 100px; }
   }
 
   & .footer__menu-btn {
