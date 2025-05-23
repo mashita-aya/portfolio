@@ -1,0 +1,57 @@
+// _base/base.scss
+@use "../_base/global.scss" as global;
+@use 'sass:map';
+
+html {
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color_font);
+  z-index: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+a,
+button  { cursor: pointer; }
+
+
+.home__section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-family:  "Krona One", serif;
+  letter-spacing: 0.10rem;
+}
+
+
+.button--normal {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: #7C7C7C;
+  border: 1px solid global.$color_main;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 10px 24px;
+  transition: .3s;
+  @include global.sp { width: 40%; }
+  @include global.pc { width: 20%; }
+
+  &:hover{ 
+    color:#fff;
+    background: global.$color_main;
+  }
+}

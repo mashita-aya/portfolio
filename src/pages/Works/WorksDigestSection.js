@@ -3,17 +3,17 @@ import React from 'react';
 
 export const WorksDigestSection = ({ id, title, tag, imageName}) => {
   return (
-    <div className="works_content">
+    <div className="works-section">
       <Link
-        className="works_list_link"
+        className="works-section__link"
         to={`/workdetail/${id}`}
       >     
-        <div className="works_list_pic">
+        <div className="works-section__link-pic">
           <img src={`${process.env.PUBLIC_URL}/images/${imageName}`} alt={title} />
         </div>
-        <div className="works_list_content">
-          <h4 className="works_list_title">{title}</h4>
-          <p className="works_list_decoration">{tag}</p>
+        <div className="works-section__content">
+          <h4 className="works-section__title">{title}</h4>
+          <p className="works-section__decoration">{tag}</p>
         </div>
       </Link>
     </div>

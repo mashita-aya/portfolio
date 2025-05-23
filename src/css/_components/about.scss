@@ -1,0 +1,180 @@
+// _components/about.scss
+@use "../_base/global.scss" as global;
+
+
+/* ===== About Block ===== */
+.about { 
+  @include global.flex;
+  @include global.alignItems(center);
+
+  @include global.sp {
+    @include global.flexDirection(col);
+  }
+  @include global.pc {
+    @include global.justifyContent(sb);
+  }
+
+  & .about__pic {
+    height: auto;
+    @include global.sp {
+      width: 100%;
+      padding: 24px 0;
+    }
+    @include global.pc { width: 50%; }
+  }
+
+  & .about__text {
+    @include global.sp { width: 100%; }
+    @include global.pc { width: 45%; }
+  }
+
+  & .about__name {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  & .about__sub-title {
+    font-size: 1.0rem;
+    letter-spacing: 0.02rem;
+    text-align: center;
+    color: global.$color_main;
+    margin-top: 7px;
+  }
+
+  & .about__introduction {
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    padding-top: 8px;
+  }
+  & .about__introduction:first-of-type { margin-top: 24px; }
+}
+
+/* ===== About Section Block ===== */
+.about-section {
+  margin-top: 80px;
+  @include global.sp { margin-top: 55px; }
+
+  & .about {
+    @include global.sp { padding: 0 16px; }
+    @include global.pc { padding: 0 80px; }
+  }
+
+  & .about-section__header {
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-family:  "Krona One", serif;
+    letter-spacing: 0.10rem;
+    @include global.sp { 
+      padding: 40px 16px;
+      border-top: 1px solid global.$color_line;
+    }
+    @include global.pc { padding: 60px 80px; }
+  }
+
+  & .about-section__subtitle {
+    font-family:  "Krona One", serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.10rem;
+    font-weight: 600;
+  }
+
+  & .about-section__biography {
+    margin-top: 80px;
+    @include global.sp { 
+      margin-left: 16px; 
+      margin-right: 16px; 
+    }
+    @include global.pc {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+  }
+
+  & .about-section__biography-list:first-of-type {
+    @include global.sp { margin-top: 20px; }
+    @include global.pc { margin-top: 40px; }
+  }
+
+  & .about-section__biography-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    line-height: 1.2;
+    @include global.sp { padding: 4px 0; }
+    @include global.pc { 
+      padding: 8px 24px;
+      border-left: 1px solid global.$color_line;
+    }
+  }
+
+  & .about-section__biography-year {
+    font-weight: 600;
+    @include global.sp {  width: 15%; }
+    @include global.pc {  width: 8%; }
+  }
+   
+  & .about-section__biography-summary {
+    font-weight: normal;
+    @include global.sp {  width: 75%; }
+    @include global.pc {  width: 92%; }
+  }
+
+  & .about-section__skills {
+    border-top: 1px solid #f7f7f7;
+    border-bottom: 1px solid #f7f7f7;
+    background-image: 
+      linear-gradient(90deg, #f7f7f7 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin-top: 80px;
+    @include global.sp {  padding: 40px 16px; }
+    @include global.pc {  padding: 60px 80px; }
+  }
+ 
+  & .about-section__skill-list {
+    @include global.flex;
+    @include global.alignItems(center);
+    @include global.sp { 
+      margin-top: 32px;
+      @include global.flexDirection(col);
+      border-top: 1px solid global.$color_line;
+    }
+    @include global.pc { 
+      margin-top: 40px;
+      @include global.justifyContent(sb);
+    }
+  }
+
+  & .about-section__skill-item {
+    border-bottom: 1px solid global.$color_line;
+    @include global.sp { padding: 32px 0; }
+    @include global.pc { 
+      width: 45%;
+      border-bottom: none;
+    }
+  }
+
+  & .about-section__skill-header {
+    @include global.pc { 
+      @include global.flex;
+      @include global.justifyContent(fs);
+      @include global.alignItems(end);
+    }
+  }
+
+  & .about-section__skill-title { 
+    font-size: 1.5rem; 
+    font-weight: 200;
+    margin-right: 12px;
+  }
+  & .about-section__skill-category { 
+    color: #cac4c4;
+    @include global.sp { margin-top: 8px; }
+  }
+  & .about-section__skill-summary { 
+    line-height: 1.5;
+    margin-top: 16px;
+    @include global.pc { font-size: 1.1rem; }
+  }
+}

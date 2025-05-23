@@ -1,0 +1,148 @@
+// _components/footer.scss
+@use "../_base/global.scss" as global;
+@use 'sass:map';
+
+/* ===== footer Block ===== */
+.footer {
+  width: 100%;
+  padding: 120px 0 24px;
+ 
+  & .footer__content {
+    width: 95%;
+    margin-left: auto;
+  }
+  
+  & .footer__title {
+    font-size: 2.0rem;
+    font-weight: 600;
+    font-family: "Krona One", serif;
+    letter-spacing: 0.10rem;
+    padding: 0 8px 12px;
+    border-bottom: 1px solid global.$color_main;
+  }
+  
+  & .footer__text {
+    padding: 0 8px;
+    color: #A4A4A4;
+    margin-top: 24px;
+    @include global.pc { font-size: 1.4rem; }
+  }
+
+  & .footer__mail-link { width: fit-content; }
+  & .footer__mail-link:hover { opacity: 0.5; }
+  
+  & .footer__mail-addr {
+    padding: 0 8px;
+    text-decoration-line: underline;
+    font-size: 2.0rem;
+    margin-top: 12px;
+  }
+
+  & .footer__copyright {
+    @include global.flex;
+    @include global.justifyContent(center);
+    font-size: 1.0rem;
+    text-align: center;
+    color: #A4A4A4;
+    @include global.sp {  margin-top: 140px; }
+    @include global.pc {  margin-top: 100px; }
+  }
+
+  & .footer__menu-btn {
+    border-radius: 50%;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    overflow: visible;
+    cursor: pointer;
+    position: fixed;
+    bottom: 80px;
+    z-index: map.get(global.$z-index, footer-btn);
+    box-sizing: border-box;
+    @include global.sp { 
+      width: 80px;
+      height: 80px;
+      right: 16px; 
+    }
+    @include global.pc { 
+      width: 100px;
+      height: 100px;
+      right: 80px; 
+    }
+  }
+  & .footer__menu-icon {
+    width: 100%;
+    height: 100%;
+    fill: none;
+  }
+  & .footer__menu-icon__rotating {
+    animation: circular-text-rotate 16s linear infinite;
+    transform-origin: center;
+
+    text {
+      fill: #333;
+      font-size: 1.0rem;
+      letter-spacing: 1.2rem;
+    }
+  }
+
+  & .footer__menu-text {
+    fill: #333;
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+    transition: opacity 0.3s ease;
+
+    &--title,
+    &--close { pointer-events: none; }
+
+    &--hidden { opacity: 0; }
+    &--visible { opacity: 1; }
+  }
+
+  & .footer__sub-nav {
+    position: fixed;
+    bottom: 0;
+    right: -100%;
+    z-index: map.get(global.$z-index, sub-nav);
+    height: 80vh;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-top: 1px solid global.$color_line;
+    border-right: 1px solid global.$color_line;
+    border-radius: 200px 0 0 0;
+    transition-delay: .6s;
+    box-sizing: border-box;
+    box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.25s cubic-bezier(0.83, 0, 0.17, 1);
+    @media (min-width: 768px) { }
+    @include global.sp { width: 95%; }
+    @include global.pc { width: 30%; }
+  }
+
+  & .footer__sub-nav--open { right: 0; }
+  & .footer__sub-nav__list {
+    height: 100vh;
+    padding: 120px 0;
+  }
+
+  & .footer__sub-nav__item {
+    font-family: "Krona One", sans-serif;
+    font-size: 1.8rem;
+  }
+
+  & .footer__sub-nav__link { 
+    width: 100%;
+    padding: 40px 80px;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+    &:hover { opacity: 0.5;}
+  }
+}
+
+// サークルアニメーション
+@keyframes circular-text-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}

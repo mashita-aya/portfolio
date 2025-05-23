@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { workList } from '../../data/workList';
 import IconWindow from '../../images/window_icon.svg';
-import { FadeInSection } from '../../components/FadeInSection';
+import { FadeInSection } from '../components/FadeInSection';
 
 export const WorkDetail = () => {
   const { id } = useParams();
@@ -16,8 +16,8 @@ export const WorkDetail = () => {
 
   return (
     <FadeInSection>
-      <div className="work_detail_section">
-        <div className="work_detail_header">
+      <div className="work-detail">
+        <div className="work-detail__header">
           <h2>
             {work.url ? (
               <a target="_blank" rel="noreferrer" href={work.url}>
@@ -31,38 +31,28 @@ export const WorkDetail = () => {
           <p>{work.summary}</p>
         </div>
 
-        <div className="work_detail_container">
-          <div className="left_contnt">
-            <div className="sp_img">
-              <img src={`${process.env.PUBLIC_URL}/images/${work.imageName01}`} alt={work.title} />
-            </div>
-            <div className="pc_img">
-              <a 
-                className={work.imageNameSc ? '' : 'full_width'}
-                href={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`}
-              >
-                <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
-              </a>
-              {work.imageNameSc && (
-                <a href={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`}>
-                  <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
-                </a>
-              )}
-            </div>
+        <div className="work-detail__container">
+          <div className="work-detail__left-contnt">
+            <a 
+              className="work-detail__image"
+              href={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`}
+            >
+              <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
+            </a>
           </div>
-          <div className="right_contnt">
-            <ul className="basic-text-inner">
+          <div className="work-detail__right-content">
+            <ul className="work-detail__text-list">
               <li>
-                <div className="catchCopy">{work.catchCopy}</div>
-                <p className="purpose">{work.summary}</p>
+                <div className="work-detail__catchcopy">{work.catchCopy}</div>
+                <p className="work-detail__purpose">{work.summary}</p>
                 {work.detail.split('\n').map((line, index) => (
                   <React.Fragment key={index}>
-                    <p className="works_introduction">
+                    <p className="work-detail__introduction">
                     {line}
                     </p>
                   </React.Fragment>
                 ))}
-                <div className="detail">
+                <div className="work-detail__detail">
                   <dl>
                     <dt>担当範囲</dt>
                     <dd>{work.responsibleRange}</dd>
@@ -75,16 +65,6 @@ export const WorkDetail = () => {
                       </>
                     )}
                   </dl>
-                </div>
-              </li>
-              <li>
-                <div className={work.imageNameSc ? 'sp_img' : 'sp_img full_width'}>
-                  {work.id !== '07' && work.imageNamePc && (
-                    <img src={`${process.env.PUBLIC_URL}/images/${work.imageNamePc}`} alt={work.title} />
-                  )}
-                  {work.imageNameSc && (
-                    <img src={`${process.env.PUBLIC_URL}/images/${work.imageNameSc}`} alt={work.title} />
-                  )}
                 </div>
               </li>
             </ul>

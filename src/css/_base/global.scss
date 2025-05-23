@@ -1,0 +1,183 @@
+// _base/global.scss
+@use 'sass:map';
+
+// 色
+$color_main: #d2d2d2;
+$color_line: #ddd;
+$color_font: #333;
+$color_accent: #E4E4E4;
+
+// ブレークポイント
+$breakpoints: (
+  medium: 768,
+);
+@mixin sp {
+  @media screen and (max-width: #{map.get($breakpoints, medium) - 0.02}px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: #{map.get($breakpoints, medium)}px), print {
+    @content;
+  }
+}
+
+// z-index
+$z-index: (
+  header: 10,
+  home-title: 20,
+  loading: 999,
+  footer-btn: 25,
+  sub-nav: 20,
+);
+
+// アニメーション
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tracking-in-expand{-webkit-animation:tracking-in-expand .7s cubic-bezier(.215,.61,.355,1.000) both;animation:tracking-in-expand .7s cubic-bezier(.215,.61,.355,1.000) both}
+@-webkit-keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}@keyframes tracking-in-expand{0%{letter-spacing:-.5em;opacity:0}40%{opacity:.6}100%{opacity:1}}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+// display: flex
+@mixin flex {
+  display: flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+}
+
+// flex-direction
+// - row  : row
+// - rowR : row-reverse
+// - col  : column
+// - colR : column-reverse
+@mixin flexDirection($value: row) {
+  @if $value==rowR {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+  }
+  @else if $value==col {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+  }
+  @else if $value==colR {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+  }
+  @else {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+  }
+}
+
+// flex-wrap（基本：nowrap）
+// - wrap
+@mixin flexWrap($value: nowrap) {
+  @if $value==wrap {
+      flex-wrap: $value;
+      -ms-flex-wrap: $value;
+      -webkit-flex-wrap: $value;
+  }
+  @else {
+      flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      -webkit-flex-wrap: nowrap;
+  }
+}
+
+// justify-content（基本：start）
+// - sb : space-between
+// - sa : space-around
+// - center
+@mixin justifyContent($value: start) {
+  @if $value==sb {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+  }
+  @else if $value==sa {
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+  }
+  @else if $value==center {
+      justify-content: center;
+      -ms-justify-content: center;
+      -webkit-justify-content: center;
+  }
+  @else {
+      justify-content: start;
+      -ms-justify-content: start;
+      -webkit-justify-content: start;
+  }
+}
+
+// align-items（基本：stretch）
+// - start
+// - end
+// - center
+// - baseline
+@mixin alignItems($value: stretch) {
+  @if $value==start {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+  }
+  @else if $value==end {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+  }
+  @else if $value==center {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+  @else if $value==baseline {
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline;
+  }
+  @else {
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+  }
+}

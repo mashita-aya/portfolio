@@ -1,0 +1,11 @@
+@use 'sass:map';
+
+@use "./_base/base.scss";
+@use "./_components/header.scss";
+@use "./_components/footer.scss";
+@use "./_components/home.scss";
+@use "./_components/about.scss";
+@use "./_components/works.scss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Noto+Sans+JP:wght@100..900&display=swap');

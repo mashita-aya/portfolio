@@ -1,15 +1,15 @@
 import { WorksDigestSection } from './WorksDigestSection';
 import { workList } from '../../data/workList';
-import { FadeInSection } from '../../components/FadeInSection';
+import { FadeInSection } from '../components/FadeInSection';
 
 export const WorksContent = () => {
   return (
     <FadeInSection>
-      <div className="works_section section">
-        <div className="works_header">
-          <h2 className="contact_title tracking-in-expand">works</h2>
+      <div className="works">
+        <div className="works__header">
+          <h2 className="works-section__title tracking-in-expand">works</h2>
         </div>
-        <div className="works_inner">
+        <div className="works__inner">
           {workList.map((item, index) => (
             <WorksDigestSection
               key={index}
