@@ -103,17 +103,11 @@
 /* ===== Works Detail Block  ===== */
 .work-detail {
   background: #dddddd2a;
+  padding-top: 100px;
   padding-bottom: 80px;
   & .work-detail__header {
-    @include global.sp {
-      padding: 24px 16px;
-      margin-top: 60px;
-      border-top: 1px solid global.$color_line;
-    }
-    @include global.pc {
-      padding: 40px 80px; 
-      margin-top: 80px;
-    }
+    @include global.sp { padding: 24px 16px; }
+    @include global.pc { padding: 40px 80px; }
     h2 {
       font-size: 1.6rem;
       font-weight: 500;
@@ -172,7 +166,7 @@
       height: 100vh;
       padding: 60px 40px 0;
       position: sticky;
-      top: 80px;
+      top: 100px;
       margin-right: 80px;
       overflow-y: auto;
     }

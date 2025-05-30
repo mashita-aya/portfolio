@@ -53,8 +53,7 @@
 
 /* ===== About Section Block ===== */
 .about-section {
-  margin-top: 80px;
-  @include global.sp { margin-top: 55px; }
+  padding-top: 100px;
 
   & .about {
     @include global.sp { padding: 0 16px; }
@@ -66,10 +65,7 @@
     font-weight: 600;
     font-family:  "Krona One", serif;
     letter-spacing: 0.10rem;
-    @include global.sp { 
-      padding: 40px 16px;
-      border-top: 1px solid global.$color_line;
-    }
+    @include global.sp { padding: 40px 16px; }
     @include global.pc { padding: 60px 80px; }
   }
 

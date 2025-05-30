@@ -57,7 +57,7 @@ export const Footer = () => {
               offset={-50}
               onClick={() => setIsOpen(false)}
             >
-              home
+              <span>home</span>
             </Link>
           </li>
           <li className="footer__sub-nav__item">
@@ -66,7 +66,7 @@ export const Footer = () => {
               to="/about/content"
               onClick={() => setIsOpen(false)}
             >
-              about
+              <span>about</span>
             </Link>
           </li>
           <li className="footer__sub-nav__item">
@@ -75,7 +75,7 @@ export const Footer = () => {
               to="/works/content"
               onClick={() => setIsOpen(false)}
             >
-              works
+              <span>works</span>
             </Link>
           </li>
           <li className="footer__sub-nav__item">
@@ -84,7 +84,7 @@ export const Footer = () => {
               href="mailto:a.mashita.works@gmail.com"
               onClick={() => setIsOpen(false)}
             >
-              contact
+              <span>contact</span>
             </a>
           </li>
         </ul>

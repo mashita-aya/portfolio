@@ -28,10 +28,14 @@
     @include global.pc { font-size: 1.4rem; }
   }
 
-  & .footer__mail-link { width: fit-content; }
-  & .footer__mail-link:hover { opacity: 0.5; }
+  & .footer__mail-link {  
+    display: inline-block;
+    transition: 0.3s; 
+  }
+  & .footer__mail-link:hover { color: global.$color_accent; }
   
   & .footer__mail-addr {
+    width: fit-content;
     padding: 0 8px;
     text-decoration-line: underline;
     font-size: 2.0rem;
@@ -56,6 +60,7 @@
     cursor: pointer;
     position: fixed;
     bottom: 80px;
+    box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.005);
     z-index: map.get(global.$z-index, footer-btn);
     box-sizing: border-box;
     @include global.sp { 
@@ -67,6 +72,13 @@
       width: 100px;
       height: 100px;
       right: 80px; 
+    }
+
+    &:hover {
+      .footer__menu-text {
+        fill: #33333380;
+        letter-spacing: 0.4rem;
+      }
     }
   }
   & .footer__menu-icon {
@@ -89,9 +101,8 @@
     fill: #333;
     font-size: 1.1rem;
     letter-spacing: 0.2rem;
-    transition: opacity 0.3s ease;
+    transition: letter-spacing 0.3s;
 
-    &--title,
     &--close { pointer-events: none; }
 
     &--hidden { opacity: 0; }
@@ -113,7 +124,6 @@
     box-sizing: border-box;
     box-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
     transition: background-color 0.25s cubic-bezier(0.83, 0, 0.17, 1);
-    @media (min-width: 768px) { }
     @include global.sp { width: 95%; }
     @include global.pc { width: 30%; }
   }
@@ -135,8 +145,22 @@
     display: block;
     text-decoration: none;
     cursor: pointer;
-    transition: .3s;
-    &:hover { opacity: 0.5;}
+
+    &:hover {
+      span {
+        background-image: linear-gradient(#000, #000);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 0 1px;
+        transition: background-size 0.3s;
+    
+        &:hover {
+          opacity: 0.6;
+          background-position: bottom left;
+          background-size: 100% 1px;
+        }
+      }
+    }
   }
 }
 
